@@ -1,0 +1,11 @@
+.card{
+    max-width: 20%;
+}
+
+.page-header{
+    background-color: #b7c3bf;
+    text-align: center; 
+    border-bottom: groove;
+    border-color: #efe5e5;
+}
+
