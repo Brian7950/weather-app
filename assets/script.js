@@ -3,16 +3,19 @@ var date = new Date();
 var day = date.getDate();
 var month = date.getMonth() + 1;
 date = `${month}/${day}`;
+previousCity = {};
 
 
 
+
+//search for city 
 $("#search-weather").on("click",function(){
     var city = $("#city-name").val()
     console.log(city);
     getApi(city);
-    localStorage.setItem("city", city);
-    console.log(localStorage);
+
 });
+
 
 function getApi(city){
     var url =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
@@ -24,7 +27,7 @@ function getApi(city){
             var lon = apiData.coord.lon;
             getFiveDay(lat, lon, city);
         }})
-}
+};
 
 function getFiveDay(lat,lon, city){
     var url =`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`
@@ -39,7 +42,7 @@ function getFiveDay(lat,lon, city){
             <h6>Temp:${apiData.current.temp}<span><img src="https://openweathermap.org/img/wn/${apiData.current.weather[0].icon}@2x.png
             " /></span></h6>
 
-            <h6> UV: ${apiData.current.uvi}<span> "TEST" </span></h6>
+            <h6> UV: ${apiData.current.uvi}</h6>
 
             <h6> Humidity: ${apiData.current.humidity}%</h6>
 
@@ -59,8 +62,32 @@ function getFiveDay(lat,lon, city){
             }
             $("#five-day").html(fiveDay);
         
-        }})
+        }})   
+};
 
+function savedHistory(){
+    localStorage.setItem("previousCity", JSON.stringify(previousCity))
+};
+
+function loadHistory(){
+    previousCity = JSON.parse(localStorage.getItem("previousCity"));
+    //if empty, create an object 
+    if(!previousCity){
+        previousCity = {
+            city: []
+        };
+    }
+
+}
+
+function displayHistory(){
+    $("#search-weather").on("click", function(previousCity){
+
+    })
+}
+
+function createHistoryEl(cityName){
+    //create list of previous city searches
+    var cityLi = $("<li>")
     
-
 }
