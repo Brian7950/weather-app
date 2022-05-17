@@ -10,6 +10,8 @@ $("#search-weather").on("click",function(){
     var city = $("#city-name").val()
     console.log(city);
     getApi(city);
+    localStorage.setItem("city", city);
+    console.log(localStorage);
 });
 
 function getApi(city){
@@ -30,8 +32,10 @@ function getFiveDay(lat,lon, city){
         url:url,
         success:function(apiData){
             console.log(apiData);
+
+            //todays forcast in individual section
             var currentForcast = `<div>
-            <h1> City: ${city}</h1>
+            <h1> City: ${city.toUpperCase()}</h1>
             <h6>Temp:${apiData.current.temp}<span><img src="https://openweathermap.org/img/wn/${apiData.current.weather[0].icon}@2x.png
             " /></span></h6>
 
@@ -44,16 +48,19 @@ function getFiveDay(lat,lon, city){
             </div>`
             $("#display-today").html(currentForcast)
 
+            //new section created for 5 day breakdown
             var fiveDay = ""
             for(let i = 0; i < 5; i++){
                 var day = moment().add(i+1, 'days').format("MMMM Do");
                 fiveDay += `<div class="card">
                 ${day}
-                <h6>Temp:${apiData.daily[i].temp.day}<span><img src="https://openweathermap.org/img/wn/${apiData.daily[i].weather[0].icon}@2x.png
+                <h6>Temp:${apiData.daily[i].temp.day}<span><img src="https://openweathermap.org/img/wn/${apiData.daily[i].weather[0].icon}@2x.png" />
                 </div>`
             }
             $("#five-day").html(fiveDay);
         
         }})
+
+    
 
 }
