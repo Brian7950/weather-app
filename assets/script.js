@@ -13,6 +13,7 @@ $("#search-weather").on("click",function(){
     var city = $("#city-name").val()
     console.log(city);
     getApi(city);
+    createHistoryEl(city); 
 
 });
 
@@ -80,14 +81,11 @@ function loadHistory(){
 
 }
 
-function displayHistory(){
-    $("#search-weather").on("click", function(previousCity){
-
-    })
-}
-
+//creates previous names already searched 
 function createHistoryEl(cityName){
     //create list of previous city searches
-    var cityLi = $("<li>")
-    
+    var cityLi = $("<li>").text(cityName)
+    .addClass("table-secondary");
+    $("#previous-search").append(cityLi);
+
 }

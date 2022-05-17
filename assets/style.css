@@ -1,11 +1,54 @@
-.card{
-    max-width: 20%;
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
 }
-
 .page-header{
     background-color: #b7c3bf;
     text-align: center; 
     border-bottom: groove;
     border-color: #efe5e5;
 }
+
+li{
+    margin-top: 10px;
+    margin-right: 15px;
+    background-color: lightgray;
+    border-radius: 40px;
+    border: black solid;
+}
+
+/* right side content */
+.col-md-9{
+    margin: auto;   
+}
+
+/* bottom half of page (5 day display)*/
+.card{
+    max-width: 18%;
+    padding: 2rem;
+    margin:auto; 
+    background-color: darkgrey;
+}
+
+/*UV color indicators*/
+.uv-low{
+    background-color: lightgreen;
+}
+
+.uv-moderate{
+    background-color: rgb(233, 233, 170);
+}
+
+.uv-high{
+    background-color: orange;
+}
+
+.uv-extreme{
+    background-color: purple;
+}
+
+
+
+
 
