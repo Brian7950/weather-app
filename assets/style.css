@@ -31,21 +31,25 @@ li{
     background-color: darkgrey;
 }
 
-/*UV color indicators*/
+/*UV index color indicators*/
 .uv-low{
     background-color: lightgreen;
+    border-radius: 10px;
 }
 
 .uv-moderate{
     background-color: rgb(233, 233, 170);
+    border-radius: 10px;
 }
 
 .uv-high{
     background-color: orange;
+    border-radius: 10px;
 }
 
 .uv-extreme{
     background-color: purple;
+    border-radius: 10px;
 }
 
 

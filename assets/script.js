@@ -43,7 +43,7 @@ function getFiveDay(lat,lon, city){
             <h6>Temp:${apiData.current.temp}<span><img src="https://openweathermap.org/img/wn/${apiData.current.weather[0].icon}@2x.png
             " /></span></h6>
 
-            <h6> UV: ${apiData.current.uvi}</h6>
+            <h6> UV: ${uvColor(apiData)}</h6>
 
             <h6> Humidity: ${apiData.current.humidity}%</h6>
 
@@ -87,5 +87,25 @@ function createHistoryEl(cityName){
     var cityLi = $("<li>").text(cityName)
     .addClass("table-secondary");
     $("#previous-search").append(cityLi);
-
 }
+
+//uv colors depending on uv scale 0-11
+function uvColor(data){
+    if(data){
+        console.log(data.current.uvi);
+        var uv = $("<li>").text(data.current.uvi).append(uv);
+    }
+    // if(data.current.uvi ){
+    //     var uvColorEl = $("<p>").text("test")
+    //     $("#display-today").append(uvColorEl);
+    //     console.log(data);
+    //     console.log(data.current.uvi);
+    }
+    // else if(data.current.uvi > 2){
+    //     var uvColorEl = $("<span>").text(data.current.uvi)
+    //     // .addClass("uv-high");
+    //     $("#display-today").append(uvColorEl);
+    //     console.log(data);
+    //     console.log(data.current.uvi);
+    // }
+// }
