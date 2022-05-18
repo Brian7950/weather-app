@@ -94,17 +94,13 @@ function createHistoryEl(cityName) {
 //uv colors depending on uv scale 0-11
 function uvColor(data) {
     if (data.current.uvi <= 2) {
-        var uvEl = document.getElementById("uv");
-        return uvEl.classList.add("uv-low");
+       return $("#uv").addClass("uv-low");
     } else if (data.current.uvi > 2 && data.current.uvi < 6) {
-        var uvEl = document.getElementById("uv");
-         uvEl.classList.add("uv-moderate");
+       return  $("#uv").addClass("uv-low");
     } else if (data.current.uvi >= 6 && data.current.uvi < 8) {
-        var uvEl = document.getElementById("uv");
-        return uvEl.classList.add("uv-high");
+       return $("#uv").addClass("uv-low");
     } else if (data.current.uvi >= 8 && data.current.uvi < 11) {
-        var uvEl = document.getElementById("uv");
-        return uvEl.classList.add("uv-veryhigh");
-    } else var uvEl = document.getElementById("uv");
-    return uvEl.classList.add("uv-extreme");
+      return  $("#uv").addClass("uv-low");
+    } else 
+    $("#uv").addClass("uv-low");
 }
