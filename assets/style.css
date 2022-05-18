@@ -34,25 +34,28 @@ li{
 /*UV index color indicators*/
 .uv-low{
     background-color: lightgreen;
-    border-radius: 10px;
+    border-radius: 25px;
 }
 
 .uv-moderate{
     background-color: rgb(233, 233, 170);
-    border-radius: 10px;
+    border-radius: 25px;
 }
 
 .uv-high{
     background-color: orange;
-    border-radius: 10px;
+    border-radius: 25px;
+}
+
+.uv-veryhigh{
+    background-color: red;
+    border-radius: 25px;
 }
 
 .uv-extreme{
     background-color: purple;
-    border-radius: 10px;
+    border-radius: 25px;
 }
-
-
 
 
 
