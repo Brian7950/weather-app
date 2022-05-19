@@ -45,13 +45,13 @@ function getFiveDay(lat, lon, city) {
             if (apiData.current.uvi < 2) {
                 currentForcast += `<h6><span class="uv-low">UV: ${apiData.current.uvi}<span></h6>`
             }
-            else if (apiData.current.uvi >= 2 && data.current.uvi < 6) {
+            else if (apiData.current.uvi >= 2 && apiData.current.uvi < 6) {
                 currentForcast += `<h6><span class="uv-moderate"> UV: ${apiData.current.uvi}<span></h6>`
             }
-            else if (data.current.uvi >= 6 && data.current.uvi < 8) {
+            else if (data.current.uvi >= 6 && apiData.current.uvi < 8) {
                 currentForcast += `<h6><span class="uv-high">UV: ${apiData.current.uvi}<span></h6>`
             }
-            else if (data.current.uvi >= 8 && data.current.uvi < 11) {
+            else if (data.current.uvi >= 8 && apiData.current.uvi < 11) {
                 currentForcast += `<h6><span class="uv-veryhigh">UV: ${apiData.current.uvi}<span></h6>`
             }
             else
@@ -105,17 +105,3 @@ function createHistoryEl(cityName) {
     var cityLi = $("<li>").text(cityName);
     $("#previous-search").append(cityLi);
 }
-
-//uv colors depending on uv scale 0-11
-// function uvColor(data) {
-    // if (data.current.uvi < 2) {
-    //    return $("#uv").addClass("uv-low");
-    // } else if (data.current.uvi >= 2 && data.current.uvi < 6) {
-    //    return  $("#uv").addClass("uv-low");
-    // } else if (data.current.uvi >= 6 && data.current.uvi < 8) {
-    //    return $("#uv").addClass("uv-low");
-// } else if (data.current.uvi >= 8 && data.current.uvi < 11) {
-//     return $("#uv").addClass("uv-low");
-// } else
-//     $("#uv").addClass("uv-low");
-// }
