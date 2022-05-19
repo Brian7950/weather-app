@@ -40,14 +40,29 @@ function getFiveDay(lat, lon, city) {
             <h6>Temp:${apiData.current.temp
                 }<span><img src="https://openweathermap.org/img/wn/${apiData.current.weather[0].icon
                 }@2x.png
-            " /></span></h6>
+            " /></span></h6>`
+            //create if statement to render color depending on uv. js takes logic and assigns a class depending on result
+            if (apiData.current.uvi < 2) {
+                currentForcast += `<h6><span class="uv-low">UV: ${apiData.current.uvi}<span></h6>`
+            }
+            else if (apiData.current.uvi >= 2 && data.current.uvi < 6) {
+                currentForcast += `<h6><span class="uv-moderate"> UV: ${apiData.current.uvi}<span></h6>`
+            }
+            else if (data.current.uvi >= 6 && data.current.uvi < 8) {
+                currentForcast += `<h6><span class="uv-high">UV: ${apiData.current.uvi}<span></h6>`
+            }
+            else if (data.current.uvi >= 8 && data.current.uvi < 11) {
+                currentForcast += `<h6><span class="uv-veryhigh">UV: ${apiData.current.uvi}<span></h6>`
+            }
+            else
+                currentForcast += `<h6><span class="uv-extreme">UV: ${apiData.current.uvi}<span></h6>`
 
-            <h6>UV:<span id="uv">  ${apiData.current.uvi}${uvColor(
-                    apiData
-                )}<span></h6>
+            // currentForcast += `<h6>UV:<span id="uv">  ${apiData.current.uvi}${uvColor(
+            //     apiData
+            // )}<span></h6>
            
 
-            <h6> Humidity: ${apiData.current.humidity}%</h6>
+            currentForcast += `<h6> Humidity: ${apiData.current.humidity}%</h6>
 
             <h6> Wind: ${apiData.current.wind_speed} MPH</h6>
             
@@ -92,15 +107,15 @@ function createHistoryEl(cityName) {
 }
 
 //uv colors depending on uv scale 0-11
-function uvColor(data) {
-    if (data.current.uvi <= 2) {
-       return $("#uv").addClass("uv-low");
-    } else if (data.current.uvi > 2 && data.current.uvi < 6) {
-       return  $("#uv").addClass("uv-low");
-    } else if (data.current.uvi >= 6 && data.current.uvi < 8) {
-       return $("#uv").addClass("uv-low");
-    } else if (data.current.uvi >= 8 && data.current.uvi < 11) {
-      return  $("#uv").addClass("uv-low");
-    } else 
-    $("#uv").addClass("uv-low");
-}
+// function uvColor(data) {
+    // if (data.current.uvi < 2) {
+    //    return $("#uv").addClass("uv-low");
+    // } else if (data.current.uvi >= 2 && data.current.uvi < 6) {
+    //    return  $("#uv").addClass("uv-low");
+    // } else if (data.current.uvi >= 6 && data.current.uvi < 8) {
+    //    return $("#uv").addClass("uv-low");
+// } else if (data.current.uvi >= 8 && data.current.uvi < 11) {
+//     return $("#uv").addClass("uv-low");
+// } else
+//     $("#uv").addClass("uv-low");
+// }
