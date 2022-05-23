@@ -15,7 +15,9 @@ li{
     margin-right: 15px;
     background-color: lightgray;
     border-radius: 40px;
+    list-style: none;
     border: black solid;
+    text-align: center;
 }
 
 /* right side content */
