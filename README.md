@@ -20,7 +20,7 @@
 ### weather-app takes users input of a city name and returns current day information about weather. Returns current Temperature, UV rating, Humidity percentage, and Wind speeds. Additionally application returns five-day forecast for the same city. 
 
 ## Deployed-app: <a name="app"></a>
-### somelink . 
+### https://brian7950.github.io/weather-app/
 
 ## Image
 ![git-weather-app](https://user-images.githubusercontent.com/97642221/169921865-41faa1dc-8027-427b-aa5e-404289881df4.png)
